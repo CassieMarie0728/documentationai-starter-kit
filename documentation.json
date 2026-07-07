@@ -1,11 +1,14 @@
 {
-  "name": "Cassandra Crossno",
   "colors": {
     "light": {
-      "brand": "#3B82F6"
+      "brand": "#00d5ff",
+      "heading": "#0b0f0f",
+      "text": "#0b0f0f"
     },
     "dark": {
-      "brand": "#87B1F6"
+      "brand": "#00d5ff",
+      "heading": "#00d5ff",
+      "text": "#a8a9ad"
     }
   },
   "navigation": {
@@ -122,5 +125,10 @@
         ]
       }
     ]
-  }
+  },
+  "title": "MCP Hub",
+  "name": "MCP Hub",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat"
 }
