@@ -1,0 +1,146 @@
+---
+title: Quickstart
+description: Get started with MCP Hub quickly by creating an account, connecting your first tools, and building a simple workflow.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+
+Before starting, ensure you have:
+
+- A GitHub account
+- A Slack workspace (optional for advanced workflows)
+- A modern web browser (Chrome, Firefox, or Safari recommended)
+
+No credit card required for the free tier.
+
+</Callout>
+
+## Create an Account
+
+Sign up in under 2 minutes.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="globe">
+    Navigate to `https://app.mcphub.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, create a password, and verify your email address.
+  </Step>
+  <Step title="Complete Onboarding" icon="check-circle">
+    Choose your workspace name and accept the terms. You're now in the dashboard.
+  </Step>
+</Steps>
+
+## Connect Your First Tools
+
+Connect services via secure OAuth. No manual token management.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    <Steps>
+      <Step title="Authorize MCP Hub">
+        In the dashboard, go to **Connections** > **Add GitHub**. Click **Connect**.
+      </Step>
+      <Step title="Grant Permissions">
+        Review scopes (repos:read, issues:write) and authorize. MCP Hub handles token refresh.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Slack" icon="message-circle">
+    <Steps>
+      <Step title="Select Workspace">
+        Navigate to **Connections** > **Add Slack** and choose your workspace.
+      </Step>
+      <Step title="Approve App">
+        Grant permissions for channels and messages. Test the connection.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Connected tools appear in your inventory. You can revoke access anytime from **Settings** > **Connections**.
+</Callout>
+
+## Build Your First Workflow
+
+Use the visual builder—no code required.
+
+<Steps>
+  <Step title="Create New Workflow" icon="plus">
+    Click **New Workflow** in the dashboard. Name it `GitHub Issue to Slack Notify`.
+  </Step>
+  <Step title="Add Trigger" icon="zap">
+    Drag **GitHub Issue Created** trigger. Select your repo.
+  </Step>
+  <Step title="Add Action" icon="arrow-right">
+    Drag **Slack Post Message**. Map `issue.title` to message body.
+  </Step>
+  <Step title="Configure Logic" icon="settings">
+    Add condition: if `issue.labels` contains `bug`, post to `#bugs` channel.
+  </Step>
+</Steps>
+
+````jsx
+<CodeGroup tabs="JSON View,Visual Builder">
+```json
+{
+  "name": "GitHub Issue to Slack",
+  "trigger": {
+    "type": "github.issue.created",
+    "repo": "your-org/your-repo"
+  },
+  "actions": [
+    {
+      "type": "slack.postMessage",
+      "channel": "#general",
+      "text": "New issue: {trigger.issue.title} {trigger.issue.html_url}"
+    }
+  ]
+}
+```
+
+```
+[Visual Builder Screenshot Placeholder]
+Drag nodes from left panel to canvas.
+Connect trigger → condition → action.
+```
+</CodeGroup>
+````
+
+## Deploy and Test
+
+<Steps>
+  <Step title="Save and Deploy" icon="upload">
+    Click **Deploy**. Get your webhook URL: `https://api.mcphub.com/webhooks/your-workflow-id`.
+  </Step>
+  <Step title="Test Trigger" icon="play">
+    Create a test issue in your GitHub repo. Check Slack for the notification.
+  </Step>
+  <Step title="Monitor Execution" icon="activity">
+    View real-time logs in **Executions** tab. Debug if needed.
+  </Step>
+</Steps>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Advanced Workflows" icon="workflow" href="/guides/workflows">
+    Add loops, conditions, and parallel actions.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/authentication">
+    Invite teammates and manage permissions.
+  </Card>
+  <Card title="Analytics" icon="bar-chart-3" href="/concepts/analytics">
+    Track performance and set up alerts.
+  </Card>
+  <Card title="API Reference" icon="code" href="/configuration/api">
+    Integrate programmatically.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+  Congratulations! You've deployed your first automation. Explore the dashboard for more tools.
+</Callout>

@@ -1,0 +1,177 @@
+---
+title: Integrations
+description: Connect MCP Hub to third-party services like GitHub, Slack, Notion, and use webhooks for seamless integrations.
+---
+
+## Supported Integrations
+
+MCP Hub supports a growing list of popular services. Connect your tools to automate workflows across platforms.
+
+<Columns cols={2}>
+  <Card title="GitHub" icon="github" href="/integrations/github">
+    Automate issues, PRs, and repository events with full OAuth support.
+  </Card>
+  <Card title="Slack" icon="message-circle" href="/integrations/slack">
+    Send notifications, post messages, and trigger bots from your workflows.
+  </Card>
+  <Card title="Notion" icon="book-open" href="/integrations/notion">
+    Sync pages, databases, and manage content programmatically.
+  </Card>
+  <Card title="Webhooks" icon="zap" href="#webhooks">
+    Receive real-time events from any service via secure incoming webhooks.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  New integrations added monthly. Check the dashboard for the latest available services.
+</Callout>
+
+## OAuth Authentication Setup
+
+Set up OAuth for supported services in minutes. MCP Hub handles token refresh and secure storage automatically.
+
+<Steps>
+  <Step title="Create OAuth App" icon="settings">
+    In your service dashboard (e.g., GitHub Settings > Developer settings), create a new OAuth app. Set the callback URL to `https://api.mcphub.com/oauth/callback`.
+  </Step>
+  <Step title="Add Credentials" icon="key">
+    Copy the Client ID and Client Secret to your MCP Hub workspace.
+  </Step>
+  <Step title="Authorize" icon="shield">
+    Click "Connect" in MCP Hub. Complete the OAuth flow and grant permissions.
+  </Step>
+  <Step title="Test Connection" icon="check-circle">
+    Run a test action from the integration dashboard to verify setup.
+  </Step>
+</Steps>
+
+## Action and Trigger Catalog
+
+Explore available actions and triggers for each integration. Build workflows using no-code blocks or webhooks.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    **Triggers:**
+    - New issue created
+    - PR opened or merged
+    - Push to repository
+
+    **Actions:**
+    - Create issue
+    - Add comment
+    - Merge PR
+
+    <Board title="GitHub Workflow Example">
+      <BoardColumn title="Triggers" icon="zap">
+        <BoardCard title="New PR" description="When a pull request is opened" />
+        <BoardCard title="Issue Assigned" />
+      </BoardColumn>
+      <BoardColumn title="Actions" icon="play">
+        <BoardCard title="Slack Notify" description="Post update to channel" />
+        <BoardCard title="Notion Log" dueDate="2024-12-31" />
+      </BoardColumn>
+    </Board>
+  </Tab>
+  <Tab title="Slack" icon="message-circle">
+    **Triggers:**
+    - Message posted in channel
+    - User mentions bot
+
+    **Actions:**
+    - Send message
+    - Add reaction
+    - Create thread
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Triggers" default-open="false">
+  Use custom filters like `{event_type}` or `{repository_name}` in trigger conditions for precise matching.
+</Expandable>
+
+## Webhook Configuration
+
+Configure outgoing webhooks to trigger MCP Hub workflows from external services. Incoming webhooks receive data securely.
+
+<CodeGroup tabs="cURL,JavaScript,Python">
+  ```bash
+  curl -X POST https://api.mcphub.com/v1/webhooks/your-webhook-id \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "event": "user.signup",
+      "data": {"user_id": 123, "email": "user@example.com"}
+    }'
+  ```
+  ```javascript
+  const response = await fetch('https://api.mcphub.com/v1/webhooks/your-webhook-id', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      event: 'user.signup',
+      data: { user_id: 123, email: 'user@example.com' }
+    })
+  });
+  ```
+  ```python
+  import requests
+
+  response = requests.post(
+      'https://api.mcphub.com/v1/webhooks/your-webhook-id',
+      headers={
+          'Authorization': 'Bearer YOUR_API_KEY',
+          'Content-Type': 'application/json'
+      },
+      json={
+          'event': 'user.signup',
+          'data': {'user_id': 123, 'email': 'user@example.com'}
+      }
+  )
+  ```
+</CodeGroup>
+
+<Request tabs="cURL,JavaScript">
+  ```bash
+  curl -X POST https://api.mcphub.com/v1/webhooks/demo \
+    -H "X-MCP-Signature: v1=abc123..." \
+    -d '{"payload": "test"}'
+  ```
+  ```javascript
+  // Verify webhook signature
+  const crypto = require('crypto');
+  const signature = 'sha256=' + crypto.createHmac('sha256', WEBHOOK_SECRET).update(payload).digest('hex');
+  ```
+</Request>
+
+<Response tabs="200,400">
+  ```json
+  {
+    "status": "success",
+    "workflow_id": "wf_abc123",
+    "execution_id": "exec_456def"
+  }
+  ```
+  ```json
+  {
+    "error": "Invalid signature",
+    "code": "WEBHOOK_SIGNATURE_MISMATCH"
+  }
+  ```
+</Response>
+
+<Callout kind="tip">
+  Always verify webhook signatures using your secret to prevent unauthorized triggers. Find your webhook URL and secret in the MCP Hub dashboard.
+</Callout>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Workflow Builder" icon="workflow" href="/workflows">
+    Chain multiple integrations into powerful automations.
+  </Card>
+  <Card title="Dashboard" icon="bar-chart" href="/dashboard">
+    Monitor executions and manage connections.
+  </Card>
+</Columns>

@@ -1,0 +1,126 @@
+---
+title: Changelog
+description: Version history with recent updates, new features, and changes for MCP Hub.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+  Stay current with the latest MCP Hub releases. Check this page regularly for new features, improvements, and fixes that enhance your automation workflows.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for Notion databases in workflows, enabling dynamic data pulls and updates.
+- Introduced webhook triggers for instant workflow execution from external services.
+
+## Improvements
+
+- Enhanced dashboard performance with real-time metrics caching.
+- Optimized token refresh logic for OAuth integrations.
+
+## Bug Fixes
+
+- Fixed intermittent failures in parallel execution branches.
+- Resolved credential rotation issues during high-load scenarios.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Team workspaces now support shared macros with role-based permissions.
+- Added audit logging for all workflow executions and credential access.
+
+## Bug Fixes
+
+- Corrected Slack notification delays in error handling.
+- Patched GitHub API rate limit handling to prevent workflow stalls.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Updated workflow schema to version 2.0; migrate existing macros via the dashboard importer.
+
+## New Features
+
+- Core workflow engine with conditional logic and loops.
+- Secure credential storage using AES-256 encryption.
+
+## Initial Setup
+
+- Production-ready dashboard at `https://dashboard.example.com`.
+- API endpoints available at `https://api.example.com/v1/workflows`.
+
+</Update>
+
+## Upcoming Roadmap
+
+Track upcoming features and enhancements in our public roadmap board.
+
+<Board title="Q4 2024 Roadmap">
+  <BoardColumn title="Planned" color="0" icon="calendar">
+    <BoardCard
+      title="Advanced looping with iterators"
+      description="Support for array iteration in workflows"
+      icon="repeat"
+      dueDate="2024-12-15"
+    />
+    <BoardCard
+      title="Slack app integration"
+      description="Native Slack bot for macro execution"
+      icon="message-circle"
+      dueDate="2024-12-01"
+    />
+  </BoardColumn>
+  <BoardColumn title="In Progress" color="1" icon="loader-2">
+    <BoardCard
+      title="Multi-region deployment"
+      description="Support for AWS, GCP, and Azure regions"
+      icon="globe"
+      author="Engineering Team"
+    />
+  </BoardColumn>
+  <BoardColumn title="Completed" color="2" icon="check-circle">
+    <BoardCard
+      title="Error retry policies"
+      description="Configurable retries with exponential backoff"
+      createdAt="2024-10-15"
+    />
+  </BoardColumn>
+</Board>
+
+## Staying Updated
+
+<Steps>
+  <Step title="Subscribe to Notifications" icon="bell">
+    Enable email or Slack alerts in your workspace settings to receive release announcements.
+  </Step>
+  <Step title="Check GitHub Releases" icon="github">
+    Visit our [GitHub repository](https://github.com/example/mcp-hub) for detailed release notes and changelogs.
+  </Step>
+  <Step title="Join Community" icon="users">
+    Participate in discussions on our Discord or forum for early access to betas.
+  </Step>
+</Steps>
+
+## Explore Further
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+    Set up your first workflow in under 5 minutes.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference" horizontal>
+    Full documentation for integrating with MCP Hub APIs.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Found a bug or have a feature request? Open an issue on GitHub or contact support.
+</Callout>
