@@ -2,11 +2,13 @@
   "colors": {
     "light": {
       "brand": "#00d5ff",
+      "iconColor": "#00d5ff",
       "heading": "#0b0f0f",
       "text": "#0b0f0f"
     },
     "dark": {
       "brand": "#00d5ff",
+      "iconColor": "#00d5ff",
       "heading": "#00d5ff",
       "text": "#a8a9ad"
     }
