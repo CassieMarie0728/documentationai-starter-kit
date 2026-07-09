@@ -54,6 +54,126 @@
                 "icon": "plug"
               }
             ]
+          },
+          {
+            "group": "User Guides",
+            "icon": "compass",
+            "pages": [
+              {
+                "title": "Navigating the App",
+                "path": "docs/user-guides/navigating-the-app",
+                "icon": "map"
+              },
+              {
+                "title": "Managing Servers",
+                "path": "docs/user-guides/managing-servers",
+                "icon": "server"
+              },
+              {
+                "title": "Working with Tools",
+                "path": "docs/user-guides/working-with-tools",
+                "icon": "wrench"
+              },
+              {
+                "title": "Creating Macros",
+                "path": "docs/user-guides/creating-macros",
+                "icon": "play"
+              }
+            ]
+          },
+          {
+            "group": "Development",
+            "icon": "code",
+            "pages": [
+              {
+                "title": "Local Dev Setup",
+                "path": "docs/development/setup",
+                "icon": "wrench"
+              },
+              {
+                "title": "Testing",
+                "path": "docs/development/testing",
+                "icon": "check-circle"
+              },
+              {
+                "title": "Code Conventions",
+                "path": "docs/development/conventions",
+                "icon": "list"
+              },
+              {
+                "title": "Code Review",
+                "path": "docs/development/code-review",
+                "icon": "eye"
+              },
+              {
+                "title": "Release Process",
+                "path": "docs/development/release-process",
+                "icon": "tag"
+              }
+            ]
+          },
+          {
+            "group": "Deployment",
+            "icon": "server",
+            "pages": [
+              {
+                "title": "Docker",
+                "path": "docs/deployment/docker",
+                "icon": "box"
+              },
+              {
+                "title": "Kubernetes",
+                "path": "docs/deployment/kubernetes",
+                "icon": "ship"
+              },
+              {
+                "title": "Nginx Reverse Proxy",
+                "path": "docs/deployment/nginx",
+                "icon": "globe"
+              }
+            ]
+          },
+          {
+            "group": "Security",
+            "icon": "shield",
+            "pages": [
+              {
+                "title": "Security Overview",
+                "path": "docs/security/overview",
+                "icon": "shield"
+              }
+            ]
+          },
+          {
+            "group": "API Guide",
+            "icon": "book-open",
+            "pages": [
+              {
+                "title": "API Overview",
+                "path": "docs/api/index",
+                "icon": "info"
+              },
+              {
+                "title": "API Documentation",
+                "path": "docs/api/api_documentation",
+                "icon": "file-text"
+              },
+              {
+                "title": "Integrations",
+                "path": "docs/api/integrations",
+                "icon": "plug"
+              },
+              {
+                "title": "Errors",
+                "path": "docs/api/errors",
+                "icon": "alert-circle"
+              },
+              {
+                "title": "Rate Limits",
+                "path": "docs/api/rate-limits",
+                "icon": "gauge"
+              }
+            ]
           }
         ]
       },
@@ -130,5 +250,10 @@
   "name": "MCP Hub",
   "logo-dark": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat",
   "logo-light": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat",
-  "favicon": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat"
+  "favicon": "https://blob-cdn.documentation.ai/org-6b261869-ac76-4f88-9066-902d606203c8/doc-993205b8-f859-4875-9066-f860bcd703f7/1783445581840-op5zn5jwba9-802d5257-e905-44ac-a6fd-690907887415-1_all_221938.jpg?fm=auto&auto=compress%2Cformat",
+  "description": "Mobile-first MCP control center for server connections, tool discovery, execution, history, macros, and automation workflows.",
+  "feedback": {
+    "reactions": false,
+    "survey": false
+  }
 }
